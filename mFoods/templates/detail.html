@@ -1,0 +1,143 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'asset/font-awesome-4.7.0/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'asset/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'asset/css/style.css' %}" />
+<script src="{% static 'asset/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'asset/js/popper.js' %}"></script>
+<script src="{% static 'asset/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'asset/js/jquery.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<div>
+{% for f in filter_foods_list %}
+    
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/food">
+            <img src="{% static 'asset/img/logo_page.png' %}" height="50px" style="margin: -25px 0px -15px 0px;" >
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <form method="get" action="" class="col-5">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-sm" placeholder="Từ khóa..." name="content" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-success btn-sm" type="submit">Tìm kiếm</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+<header>  </header>
+<div class="container">    
+    <!-- content -->
+    <div class="row detail">
+        <div class="col-8">
+            <section class="result">
+                <h4>{{f.content_text}}</h4>
+            </section>
+            <img src="{{f.url_img}}" alt="" id="img_content">
+
+            <!-- Content cook -->
+            <div class="content_cook">
+                <h5>Giới thiệu</h5>
+                <div class="detail_content">
+                    {{f.intro_text}}
+                </div>
+                <h5>Công dụng</h5>
+                <div class="detail_content">
+                   {{f.use_text}}
+                </div>
+                <h5>Nguyên liệu</h5>
+                <div class="detail_content">
+                    <ul>
+                        {{f.document_text}}
+                    </ul>
+                </div>
+                <h5>Chế biến</h5>
+                <div class="detail_content">
+                    <ul>
+                        {{f.processing_text}}
+                    </ul>
+                </div>
+                <h5>Lưu ý</h5>
+                <div class="detail_content">
+                    {{f.note_text}}
+                </div>
+            </div>
+            <!-- end content cook -->
+
+            <!-- share -->
+            <div class="share fb_share">
+                <i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook
+            </div>
+            <div class="share google_share">
+                <i class="fa fa-google-plus-square" aria-hidden="true"></i> Google +
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="col-4 right">
+            <section>Món ăn mới nhất</section>
+            <div class="list_content">
+                {% for new_food in new_foods_list %}
+                <div class="demo_content">
+                    <img src="{{new_food.url_img}}" title="" alt="" />
+                    <p><a href="/food/{{new_food.id}}/">{{new_food.content_text}}</a></p>
+                    <p class="time">Ngày đăng: {{new_food.create_date}}</p>
+                </div>
+                <div style="clear: both"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <h2>Liên hệ với chúng tôi</h2>
+        <div class="row address">       
+            <div class="col email">
+                <a href="" target="_blank">
+                    <i class="fa fa-envelope" aria-hidden="true"></i><br />
+                    <label>Gmail</label>
+                </a>
+            </div>
+            <div class="col skype">
+                <a href="" target="_blank">
+                    <i class="fa fa-skype" aria-hidden="true"></i><br />
+                    <label>Skype</label>
+                </a>
+            </div>          
+            <div class="col fb">
+                <a href="" target="_blank">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i><br />
+                    <label>Facebook</label>
+                </a>
+            </div>
+            <div class="col twitter">
+                <a href="" target="_blank">
+                    <i class="fa fa-twitter" aria-hidden="true"></i><br />
+                    <label>Twitter</label>
+                </a>
+            </div>
+            <div class="col google">
+                <a href="" target="_blank">
+                    <i class="fa fa-google-plus-square" aria-hidden="true"></i><br />
+                    <label>Google +</label>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="author">Copyright &copy; 2017 by CIT </div>
+</footer>
+
+<div id="backToTop">
+    <i class="fa fa-arrow-up" aria-hidden="true"></i><br />
+</div>
+    
+    {% endfor %}
+</div>

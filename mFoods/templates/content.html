@@ -1,0 +1,196 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'asset/font-awesome-4.7.0/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'asset/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'asset/css/style.css' %}" />
+<script src="{% static 'asset/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'asset/js/popper.js' %}"></script>
+<script src="{% static 'asset/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'asset/js/jquery.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="{% static 'asset/js/jssor.slider-26.3.0.min.js' %}"></script>
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">
+				<img src="{% static 'asset/img/logo_page.png' %}" height="50px" style="margin: -25px 0px -15px 0px;" >
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+	
+				</ul>
+				<form method="get" action="">
+					<div class="input-group">
+						<input type="text" class="form-control form-control-sm" placeholder="Từ khóa..." name="content" />
+						<span class="input-group-btn">
+							<button class="btn btn-success btn-sm" type="submit">Tìm kiếm</button>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+</nav>
+	
+<header>  </header>
+	
+	<!-- Main -->
+	<div class="container">
+		<!-- result -->
+		<section class="result">
+			<div class="row">
+				<div class="col-9">
+					<label style="font-size: 30px;">Chúc các bạn ngon miệng </label>
+				</div>
+				<div class="col-3">
+					<label>Sắp xếp theo</label>
+					<select name="orderBy" id="" class="form-control">
+						<option value="">Dinh dưỡng cao</option>
+						<option value="">Dinh dưỡng vừa phải</option>
+						<option value="">Khó làm</option>
+						<option value="">Dễ làm</option>
+					</select>
+				</div>
+			</div>
+		</section>
+		<!-- end result -->
+	
+		<!-- content -->
+		
+		<div class="content">
+			<div class="row">
+				{% for food in latest_foods_list %}
+				<div class="col-4 mb-4">
+					<div class="card">
+						<img class="card-img-top" src="{{food.url_img}}" alt="Card image cap">
+						<div class="card-body">
+							<h4 class="card-title"><a href="/food/{{food.id}}">{{food.content_text}}</a></h4>
+							<p class="card-text">{{food.intro_text|truncatechars:70}}</p>
+							<a href="/food/{{food.id}}" class="btn btn-success btn-sm">Chi tiết</a>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<!-- end content -->
+		<!-- end pagination -->
+	</div>
+	<!-- end main -->
+	
+	<!-- slide -->
+	<div class="extends">
+		<h2>Món ngon mỗi ngày</h2>
+		
+		<script type="text/javascript">
+			jssor_1_slider_init = function() {
+				var jssor_1_options = {
+					$AutoPlay: 1, $Idle: 0, $SlideDuration: 5000,
+					$SlideEasing: $Jease$.$Linear,
+					$PauseOnHover: 4, $SlideWidth: 400, $Cols: 7, $Align: 0
+				};
+				var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+				var MAX_WIDTH = 1920;
+				function ScaleSlider() {
+					var containerElement = jssor_1_slider.$Elmt.parentNode;
+					var containerWidth = containerElement.clientWidth;
+					if (containerWidth) {
+						var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+						jssor_1_slider.$ScaleWidth(expectedWidth);
+					} else {
+						window.setTimeout(ScaleSlider, 3);
+					}
+				}
+				ScaleSlider();
+				$Jssor$.$AddEvent(window, "load", ScaleSlider);
+				$Jssor$.$AddEvent(window, "resize", ScaleSlider);
+				$Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+			};
+		</script>
+		<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1366px;height:250px;overflow:hidden;visibility:hidden;">
+			<div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1366px;height:250px;overflow:hidden;">
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/1.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/2.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/3.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/4.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/5.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/1.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/2.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/3.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/4.jpg' %}" /></a>
+				</div>
+				<div>
+					<a href=""><img data-u="image" src="{% static 'asset/img/5.jpg' %}" /></a>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">jssor_1_slider_init();</script>
+	</div>
+	<!-- end slide -->
+	
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<h2>Liên hệ với chúng tôi</h2>
+			<div class="row address">		
+				<div class="col email">
+					<a href="" target="_blank">
+						<i class="fa fa-envelope" aria-hidden="true"></i><br />
+						<label>Gmail</label>
+					</a>
+				</div>
+				<div class="col skype">
+					<a href="" target="_blank">
+						<i class="fa fa-skype" aria-hidden="true"></i><br />
+						<label>Skype</label>
+					</a>
+				</div>			
+				<div class="col fb">
+					<a href="" target="_blank">
+						<i class="fa fa-facebook-official" aria-hidden="true"></i><br />
+						<label>Facebook</label>
+					</a>
+				</div>
+				<div class="col twitter">
+					<a href="" target="_blank">
+						<i class="fa fa-twitter" aria-hidden="true"></i><br />
+						<label>Twitter</label>
+					</a>
+				</div>
+				<div class="col google">
+					<a href="" target="_blank">
+						<i class="fa fa-google-plus-square" aria-hidden="true"></i><br />
+						<label>Google +</label>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="author">Copyright &copy; 2017 by CIT </div>
+	</footer>
+	
+	<div id="backToTop">
+		<i class="fa fa-arrow-up" aria-hidden="true"></i><br />
+	</div>
+	
+
+

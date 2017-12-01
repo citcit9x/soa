@@ -1,0 +1,48 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'asset/font-awesome-4.7.0/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'asset/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'asset/css/style.css' %}" />
+<script src="{% static 'asset/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'asset/js/popper.js' %}"></script>
+<script src="{% static 'asset/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'asset/js/jquery.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="{% static 'asset/js/jssor.slider-26.3.0.min.js' %}"></script>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col"></div>
+		<div class="col-8">
+			<div class="home">
+				<img src="{% static 'asset/img/logo_page.png' %}" width="300px;" />
+			</div>
+			<!-- form default --> 
+			<form method="GET" action="">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Nhập vào địa điểm của bạn..." name="q" value="{{query}}" required/>
+					<span class="input-group-btn">
+						<button class="btn btn-success" type="submit">Kiểm tra thời tiết</button>
+					</span>
+				</div>
+			</form>
+			<!-- Modal -->
+			<button class="btn btn-link btn-sm btn_search_nang_cao" data-toggle="modal" data-target=".bd-example-modal-lg">
+				<a href="/food/content">
+					Các món ăn với thời tiết {{state_weather}}! xem các món ăn tại đây
+				</a>
+			</button>
+			{% if andress %}
+			<div style="color: #007bff;">
+				<p>Địa điểm: {{andress}}</p>
+				<p>Thời tiết: {{state_weather}}</p>
+				<p>Nhiệt độ: {{state_temp}}<sup>0</sup>C </p>
+			</div>
+			{% endif %}
+
+			
+			<!-- End modal -->
+		</div>
+		<div class="col"></div>
+	</div>
+</div>

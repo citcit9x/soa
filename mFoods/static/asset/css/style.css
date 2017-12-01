@@ -1,0 +1,73 @@
+.home { text-align: center; margin: 70px 0px 20px 0px; }
+/* btn search nâng cao */
+.btn_search_nang_cao { float: right; margin-top: -5px; }
+
+/* narbar */
+.navbar { border-top: 4px solid orange; box-shadow: 0px 0px 15px silver;  }
+/* header */
+header { height: 60px; }
+
+/* result */
+.result { padding: 50px 0px 20px; }
+.result h4 { margin-bottom: 4px; }
+.result label { margin: 0px; font-size: 15px; }
+
+/* detail */
+.detail #img_content { width: 100%; height: 450px; }
+.detail .content_cook { margin-top: 20px; }
+.detail .content_cook h5 { margin-top: 20px; }
+.detail .share { margin: 30px 0px; width: 110px; text-align: center; padding: 3px 0px; color: white; border-radius: 4px; font-size: 13px; float: left; margin-right: 10px; cursor: pointer; }
+.detail .share i { font-size: 16px; margin-right: 2px; }
+.detail .fb_share { background: #3b5998; }
+.detail .google_share { background: #dd4b39; }
+
+
+.detail .right { padding-top: 60px; }
+.detail .right section { font-size: 24px; border-bottom: 3px solid #10c469; padding-bottom: 5px; }
+.detail .right .list_content { margin-top: 15px; }
+.detail .right .list_content .demo_content { clear: both; margin-bottom: 0px; }
+.detail .right .list_content .demo_content img { width: 150px; border: 1px solid #10c469; padding: 5px; border-radius: 4px; float: left; margin-right: 8px; }
+.detail .right .list_content .demo_content p { font-weight: 500; margin: 0px; font-size: 18px;}
+.detail .right .list_content .demo_content .time { font-weight: normal; font-size: 13px; margin-top: -4px; }
+
+/* slide */
+.extends { padding: 100px 0px; text-align: center; background: #EBEBEB; }
+.extends h2 { margin-bottom: 50px;}
+.jssorl-009-spin img {
+    animation-name: jssorl-009-spin;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@keyframes jssorl-009-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* footer */
+footer { width: 100%; text-align: center; margin-top: 20px; padding-top: 100px; }
+footer .address i { font-size: 50px; margin-top: 80px; }
+footer .address .fb a { color: #3b5998; }
+footer .address .skype a { color: #00aff0; }
+footer .address .email a { color: #dd4b39; }
+footer .address .twitter a { color: #00aced; }
+footer .address .google a { color: #dd4b39; }
+footer .author { margin-top: 50px; height: 28px; line-height: 28px; background: gray; font-size: 14px; color: white; }
+
+/* back to top */
+#backToTop { display: none; }
+#backToTop:hover { cursor: pointer; }
+#backToTop { position: fixed; bottom: 20px; right: 20px; font-size: 22px; background: #10c469; color: white; width: 44px; text-align:center; height: 42px; border-radius: 50% }
+#backToTop i { line-height: 40px; }
+
+img.card-img-top{
+    height: 250px;
+    overflow: hidden;
+}
+h4.card-title{
+    font-size: 20px;
+    height: 40px;
+}
+.demo_content>img{
+    height: 105px;
+}
